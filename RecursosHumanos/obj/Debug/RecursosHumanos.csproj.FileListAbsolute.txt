@@ -82,7 +82,6 @@ C:\Users\Acer\source\repos\RecursosHumanos\RecursosHumanos\bin\es\System.Web.Raz
 C:\Users\Acer\source\repos\RecursosHumanos\RecursosHumanos\bin\es\System.Web.WebPages.resources.dll
 C:\Users\Acer\source\repos\RecursosHumanos\RecursosHumanos\bin\es\System.Web.WebPages.Deployment.resources.dll
 C:\Users\Acer\source\repos\RecursosHumanos\RecursosHumanos\bin\es\System.Web.WebPages.Razor.resources.dll
-C:\Users\Acer\source\repos\RecursosHumanos\RecursosHumanos\obj\Debug\RecursosHumanos.csprojAssemblyReference.cache
 C:\Users\Acer\source\repos\RecursosHumanos\RecursosHumanos\obj\Debug\RecursosHumanos.csproj.CoreCompileInputs.cache
 C:\Users\Acer\source\repos\RecursosHumanos\RecursosHumanos\obj\Debug\RecursosHumanos.csproj.CopyComplete
 C:\Users\Acer\source\repos\RecursosHumanos\RecursosHumanos\obj\Debug\RecursosHumanos.dll
