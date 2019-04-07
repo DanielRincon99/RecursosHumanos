@@ -10,7 +10,7 @@ using RecursosHumanos.Models;
 
 namespace RecursosHumanos.Controllers
 {
-    public class DepartamentosController : Controller
+    public class DepartamentosController : Controller 
     {
         private RecursosHEntities db = new RecursosHEntities();
 
