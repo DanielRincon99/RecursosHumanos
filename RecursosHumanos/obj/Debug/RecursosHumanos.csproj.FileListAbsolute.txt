@@ -87,3 +87,5 @@ C:\Users\Acer\source\repos\RecursosHumanos\RecursosHumanos\obj\Debug\RecursosHum
 C:\Users\Acer\source\repos\RecursosHumanos\RecursosHumanos\obj\Debug\RecursosHumanos.csproj.CopyComplete
 C:\Users\Acer\source\repos\RecursosHumanos\RecursosHumanos\obj\Debug\RecursosHumanos.dll
 C:\Users\Acer\source\repos\RecursosHumanos\RecursosHumanos\obj\Debug\RecursosHumanos.pdb
+C:\Users\Acer\source\repos\RecursosHumanos\RecursosHumanos\bin\RecursosHumanos.dll.CodeAnalysisLog.xml
+C:\Users\Acer\source\repos\RecursosHumanos\RecursosHumanos\bin\RecursosHumanos.dll.lastcodeanalysissucceeded
