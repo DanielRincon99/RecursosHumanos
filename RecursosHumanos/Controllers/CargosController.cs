@@ -10,116 +10,107 @@ using RecursosHumanos.Models;
 
 namespace RecursosHumanos.Controllers
 {
-    public class EmpleadosController : Controller
+    public class CargosController : Controller
     {
         private RecursosHEntities db = new RecursosHEntities();
 
-        // GET: Empleados
+        // GET: Cargos
         public ActionResult Index()
         {
-            var empleados = db.Empleados.Include(e => e.Cargos).Include(e => e.Departamentos);
-            return View(empleados.ToList());
+            return View(db.Cargos.ToList());
         }
 
-        // GET: Empleados/Details/5
+        // GET: Cargos/Details/5
         public ActionResult Details(string id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Empleados empleados = db.Empleados.Find(id);
-            if (empleados == null)
+            Cargos cargos = db.Cargos.Find(id);
+            if (cargos == null)
             {
                 return HttpNotFound();
             }
-            return View(empleados);
+            return View(cargos);
         }
 
-        // GET: Empleados/Create
+        // GET: Cargos/Create
         public ActionResult Create()
         {
-            ViewBag.cargo = new SelectList(db.Cargos, "nombre", "nombre");
-            ViewBag.departamento = new SelectList(db.Departamentos, "id", "codigo");
             return View();
         }
 
-        // POST: Empleados/Create
+        // POST: Cargos/Create
         // Para protegerse de ataques de publicación excesiva, habilite las propiedades específicas a las que desea enlazarse. Para obtener 
         // más información vea https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "id,codigoEmp,nombre,apellido,telefono,departamento,cargo,fechaIngreso,salario,estatus")] Empleados empleados)
+        public ActionResult Create([Bind(Include = "id,nombre")] Cargos cargos)
         {
             if (ModelState.IsValid)
             {
-                db.Empleados.Add(empleados);
+                db.Cargos.Add(cargos);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
 
-            ViewBag.cargo = new SelectList(db.Cargos, "nombre", "nombre", empleados.cargo);
-            ViewBag.departamento = new SelectList(db.Departamentos, "id", "codigo", empleados.departamento);
-            return View(empleados);
+            return View(cargos);
         }
 
-        // GET: Empleados/Edit/5
+        // GET: Cargos/Edit/5
         public ActionResult Edit(string id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Empleados empleados = db.Empleados.Find(id);
-            if (empleados == null)
+            Cargos cargos = db.Cargos.Find(id);
+            if (cargos == null)
             {
                 return HttpNotFound();
             }
-            ViewBag.cargo = new SelectList(db.Cargos, "nombre", "nombre", empleados.cargo);
-            ViewBag.departamento = new SelectList(db.Departamentos, "id", "codigo", empleados.departamento);
-            return View(empleados);
+            return View(cargos);
         }
 
-        // POST: Empleados/Edit/5
+        // POST: Cargos/Edit/5
         // Para protegerse de ataques de publicación excesiva, habilite las propiedades específicas a las que desea enlazarse. Para obtener 
         // más información vea https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "id,codigoEmp,nombre,apellido,telefono,departamento,cargo,fechaIngreso,salario,estatus")] Empleados empleados)
+        public ActionResult Edit([Bind(Include = "id,nombre")] Cargos cargos)
         {
             if (ModelState.IsValid)
             {
-                db.Entry(empleados).State = EntityState.Modified;
+                db.Entry(cargos).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            ViewBag.cargo = new SelectList(db.Cargos, "nombre", "nombre", empleados.cargo);
-            ViewBag.departamento = new SelectList(db.Departamentos, "id", "codigo", empleados.departamento);
-            return View(empleados);
+            return View(cargos);
         }
 
-        // GET: Empleados/Delete/5
+        // GET: Cargos/Delete/5
         public ActionResult Delete(string id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Empleados empleados = db.Empleados.Find(id);
-            if (empleados == null)
+            Cargos cargos = db.Cargos.Find(id);
+            if (cargos == null)
             {
                 return HttpNotFound();
             }
-            return View(empleados);
+            return View(cargos);
         }
 
-        // POST: Empleados/Delete/5
+        // POST: Cargos/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(string id)
         {
-            Empleados empleados = db.Empleados.Find(id);
-            db.Empleados.Remove(empleados);
+            Cargos cargos = db.Cargos.Find(id);
+            db.Cargos.Remove(cargos);
             db.SaveChanges();
             return RedirectToAction("Index");
         }
